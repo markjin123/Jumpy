@@ -249,11 +249,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func addPowerUp(){
-        let Positions: [CGPoint] = [CGPointMake(self.size.width/2, 500),CGPointMake(self.size.width/2, 900),CGPointMake(self.size.width/2, 1000),CGPointMake(self.size.width/2, 1200),CGPointMake(self.size.width/2, 1400),CGPointMake(self.size.width/2, 1600),CGPointMake(self.size.width/2, 1800),CGPointMake(self.size.width/2, 2000),CGPointMake(self.size.width/2, 2200),CGPointMake(self.size.width/2, 2400),CGPointMake(self.size.width/2, 2600),CGPointMake(self.size.width/2, 2800)]
+        let Positions: [CGPoint] = [CGPointMake(self.size.width/2, 500),CGPointMake(self.size.width/2, 900),CGPointMake(self.size.width/2, 1000),CGPointMake(self.size.width/2, 1200),CGPointMake(self.size.width/2, 1400),CGPointMake(self.size.width/2, 1600),CGPointMake(self.size.width/2, 1800),CGPointMake(self.size.width/2, 2000),CGPointMake(self.size.width/2, 2200),CGPointMake(self.size.width/2, 2400),CGPointMake(self.size.width/2, 2600),CGPointMake(self.size.width/2, 2800),CGPointMake(self.size.width/2, 3500),CGPointMake(self.size.width/2, 4100),CGPointMake(self.size.width/2, 4800),CGPointMake(self.size.width/2, 5600),CGPointMake(self.size.width/2, 7000),CGPointMake(self.size.width/2, 8000),CGPointMake(self.size.width/2, 9100),CGPointMake(self.size.width/2, 9800)]
         
-        for i in 0 ... 11{
+        for i in Positions{
             let powerUP = SKSpriteNode(imageNamed: "powerup")
-            powerUP.position = Positions[i]
+            powerUP.position = i
             powerUP.physicsBody = SKPhysicsBody(circleOfRadius: powerUP.size.width/2)
             powerUP.physicsBody?.dynamic = false
             
@@ -262,7 +262,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             powerUP.physicsBody?.collisionBitMask = 0
             
             foreground.addChild(powerUP)
-            
         }
     }
     
